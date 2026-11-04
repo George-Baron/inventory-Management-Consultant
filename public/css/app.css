@@ -1,0 +1,58 @@
+body.app { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; background: var(--paper); }
+.side { background: var(--ink); color: #dfe6f3; padding: 22px 16px; display: flex; flex-direction: column; gap: 18px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+.side .brand { color: #fff; }
+.side .brand-mark { background: var(--gold); color: var(--ink); }
+.who { padding: 12px; background: #17294a; border-radius: 12px; display: grid; gap: 6px; }
+.who strong { color: #fff; font-size: .95rem; overflow-wrap: anywhere; }
+.who .tag { justify-self: start; margin: 0; }
+#sideNav { display: grid; gap: 2px; flex: 1; align-content: start; }
+#sideNav .grp { text-transform: uppercase; letter-spacing: .12em; font-size: .68rem; color: #8798b8; margin: 14px 10px 4px; }
+#sideNav button { text-align: left; background: none; border: 0; color: #dfe6f3; padding: 9px 12px; border-radius: 8px; font: 500 .93rem var(--body); cursor: pointer; }
+#sideNav button:hover { background: #1c2f52; }
+#sideNav button[aria-current='true'] { background: var(--gold); color: var(--ink); font-weight: 700; }
+.side-foot { display: grid; gap: 8px; }
+.side-foot .btn-ghost { color: #dfe6f3; border-color: #3a4d72; }
+.side-foot .btn-ghost:hover { background: #dfe6f3; color: var(--ink); }
+
+.main { min-width: 0; }
+.topbar { display: flex; align-items: center; gap: 14px; padding: 18px 28px; border-bottom: 1px solid var(--line); background: var(--white); }
+.topbar h1 { font-size: 1.5rem; margin: 0; }
+.topbar .menu-toggle { display: none; }
+.view { padding: 28px; outline: none; }
+.blurb { color: var(--muted); margin-bottom: 22px; max-width: 70ch; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.stat { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.stat span { display: block; font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.stat b { display: block; font: 600 1.6rem var(--display); color: var(--ink); margin-top: 4px; overflow-wrap: anywhere; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+.toolbar input[type=search] { max-width: 280px; }
+.toolbar .grow { flex: 1; }
+
+.table-wrap { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #f6f3ea; font-size: .76rem; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.actions { white-space: nowrap; text-align: right; }
+.empty { padding: 36px; text-align: center; color: var(--muted); }
+.pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; background: #eceff5; color: var(--ink-2); }
+.pill.good { background: #e0f1ea; color: #14604f; }
+.pill.warn { background: #fbefd4; color: #7a5208; }
+.pill.bad { background: #fbeceb; color: var(--danger); }
+.low { background: #fff6e5; }
+.welcome { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.welcome .card { cursor: pointer; text-align: left; font: inherit; }
+
+dialog { border: 0; border-radius: 18px; padding: 26px; width: min(560px, calc(100% - 28px)); box-shadow: 0 20px 60px rgba(14, 27, 51, .3); }
+dialog::backdrop { background: rgba(14, 27, 51, .5); }
+.dlg-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
+
+@media (max-width: 860px) {
+  body.app { grid-template-columns: 1fr; }
+  .side { position: fixed; z-index: 40; left: 0; top: 0; width: 270px; transform: translateX(-100%); transition: transform .2s; }
+  .side.open { transform: none; }
+  .topbar .menu-toggle { display: block; }
+  .topbar, .view { padding-inline: 16px; }
+}
