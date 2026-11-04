@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | {{SITE_NAME}}</title>
+  <meta name="description" content="Book a consultation with Asotech Business Advisory by form, email or WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+{{HEADER}}
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Let us talk about your business</h1>
+      <p class="lead">Fill in the form, or reach us directly. We reply as soon as we can.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap split">
+      <form id="leadForm" class="card" novalidate>
+        <div id="leadNotice" class="notice" role="status"></div>
+        <div class="row">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+        <div class="field">
+          <label for="service">What do you need help with?</label>
+          <select id="service" name="service">
+            <option value="">Choose a service</option>
+            <option>Inventory management consulting</option>
+            <option>Accounting and real-time audit</option>
+            <option>HR administration</option>
+            <option>POS and business system setup</option>
+            <option>Website and marketing</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label for="message">Tell us a little more</label><textarea id="message" name="message"></textarea></div>
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn btn-primary" type="submit">Send enquiry</button>
+      </form>
+
+      <div>
+        <div class="card" style="margin-bottom:20px">
+          <h3>Reach us directly</h3>
+          <p><strong>Email</strong><br><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+          <p><strong>Phone / WhatsApp</strong><br><a href="https://wa.me/{{WHATSAPP}}">{{PHONE}}</a></p>
+          <a class="btn btn-gold" href="https://wa.me/{{WHATSAPP}}">Chat on WhatsApp</a>
+        </div>
+        <div class="card">
+          <h3>What happens next</h3>
+          <p>We read your message, ask a few questions if needed and suggest a first step. There is no obligation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{{FOOTER}}
+<script src="/js/contact.js" defer></script>
+</body>
+</html>
